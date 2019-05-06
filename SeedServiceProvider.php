@@ -12,7 +12,7 @@ use Symfony\Component\Console\Output\ConsoleOutput;
 class SeedServiceProvider extends ServiceProvider
 {
     protected $seeds_path = '/../database/seeds';
-    protected $seeds_path_from_parent = 'MAINDIR//PROJECTDIR//SEEDSDIR\\';
+    protected $seeds_path_from_parent = 'MAINDIR\\PROJECTDIR\\SEEDSDIR\\';
 
 
     /**
