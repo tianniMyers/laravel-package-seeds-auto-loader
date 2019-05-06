@@ -12,6 +12,7 @@ use Symfony\Component\Console\Output\ConsoleOutput;
 class SeedServiceProvider extends ServiceProvider
 {
     protected $seeds_path = '/../database/seeds';
+    protected $seeds_path_from_parent = 'MAINDIR//PROJECTDIR//SEEDSDIR\\';
 
 
     /**
@@ -109,7 +110,7 @@ class SeedServiceProvider extends ServiceProvider
             if ($tokens[$i - 2][0] == T_CLASS && $tokens[$i - 1][0] == T_WHITESPACE && $tokens[$i][0] == T_STRING) {
                 $class_name = $tokens[$i][1];
                 if ($namespace !== "") {
-                    $classes[] = $namespace . "\\$class_name";
+                    $classes[] = $this->$seeds_path_from_parent . $class_name;
                 } else {
                     $classes[] = $class_name;
                 }
